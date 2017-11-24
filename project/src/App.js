@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
@@ -33,7 +34,7 @@ const mapDispatchtoProps = (dispatch)=>{
 			})
 		}
 	}
-}
+
 
 
 const App = connect(mapStatetoProps, mapDispatchtoProps)(AppUI);
