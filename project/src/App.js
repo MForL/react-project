@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
-
 import {connect} from 'react-redux';
+
 const AppUI = (props)=>{
 	return (
 		<div className="all">
@@ -34,9 +33,7 @@ const mapDispatchtoProps = (dispatch)=>{
 			})
 		}
 	}
-
-
-
+}
 const App = connect(mapStatetoProps, mapDispatchtoProps)(AppUI);
 
 export default App;
