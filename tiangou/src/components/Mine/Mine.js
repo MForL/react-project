@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+import {connect} from "react-redux";
 class Mine extends Component {
   render() {
     return (
@@ -11,4 +11,13 @@ class Mine extends Component {
   }
 }
 
-export default Mine;
+export default connect(
+	(state)=>{
+		console.log(state);
+		return {
+			list :state.list
+		}
+	},
+	null
+)(Mine);
+
