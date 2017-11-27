@@ -19,5 +19,6 @@ ul li{
 	float: left;
 	width: 20%;
 	height: 40px;
+	font-size: 12px;
 	/*box-sizing: border-box;*/
 }
