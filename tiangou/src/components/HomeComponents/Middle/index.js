@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import axios from 'axios';
 import 'antd/dist/antd.css'
 import {Carousel} from 'antd';
+import { BackTop } from 'antd';
 class Middle extends Component {
 	constructor(){
 		super();
@@ -14,22 +15,28 @@ class Middle extends Component {
 	componentDidMount() {
 
 	}
-  	render() {
-  		var lunShun = this.props.dataList.length ? this.props.dataList[7].data.items:[];
-  		var qianggou = this.props.dataList.length ? this.props.dataList[8].data:[];
-  		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items:[];
-  		var fourBox= this.props.dataList.length ? this.props.dataList[9].data.items:[];
-  		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.items[0].imageUrl:[];
-  		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl:[];
-  		var Middle_three= this.props.dataList.length ? this.props.dataList[12].data.items[0].imageUrl:[];
-  		var same_one= this.props.dataList.length ? this.props.dataList[10].data.items:[];
-  		var same_two= this.props.dataList.length ? this.props.dataList[11].data.items:[];
-  		var same_three= this.props.dataList.length ? this.props.dataList[12].data.items:[];
-  		
-  		console.log(same_one)
-	    return (
-	    	<div>
-	    		<div className="middle_first">
+	render() {
+		var lunShun = this.props.dataList.length ? this.props.dataList[7].data.items:[];
+		var qianggou = this.props.dataList.length ? this.props.dataList[8].data:[];
+		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items:[];
+		var fourBox= this.props.dataList.length ? this.props.dataList[9].data.items:[];
+		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.items[0].imageUrl:[];
+		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl:[];
+		var Middle_three= this.props.dataList.length ? this.props.dataList[12].data.items[0].imageUrl:[];
+		var same_one= this.props.dataList.length ? this.props.dataList[10].data.items:[];
+		var same_two= this.props.dataList.length ? this.props.dataList[11].data.items:[];
+		var same_three= this.props.dataList.length ? this.props.dataList[12].data.items:[];
+		
+		console.log(same_one)
+		return (
+			<div>
+				<div className="backTop">
+					<BackTop />
+					Scroll down to see the bottom-right
+					<strong> gray </strong>
+					button.
+				</div>
+				<div className="middle_first">
 					<div className="article">
 						<div className="leftimg">
 							<img src="https://img1.tg-img.com/seller/201711/27/0D785E87-B71D-4B59-A13B-FDD56EDD89D3.png!y" alt=""/>
@@ -73,8 +80,8 @@ class Middle extends Component {
 						</div>
 					</div>
 					
-	    		</div>
-	    		<div className="middle_third">
+				</div>
+				<div className="middle_third">
 						<ul>
 						{
 							fourBox.map((item, index)=>{
@@ -125,13 +132,13 @@ class Middle extends Component {
 					}
 				</div>
 				<div className="bot"></div>
-	    	</div>
-	      
-	    );
-  	}
-  	// 
+			</div>
+		  
+		);
+	}
+	// 
 			// 									
-  	
+	
 }
 
 export default connect(

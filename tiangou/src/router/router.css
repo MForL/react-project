@@ -37,3 +37,25 @@
 	font-size: 0.28rem;
 	line-height: 26px;
 }
+
+.backTop{
+	color:#000;
+}
+.anticon{
+	color:#000;
+	background:#fff;
+	opacity: 1;
+}
+.ant-back-top{
+	right:0.2rem !important;
+	bottom: 0.75rem !important;
+}
+.ant-back-top-content{
+	background:#fff !important;
+}
+.ant-back-top{
+	background:#fff;
+	border:1px solid #ccc;
+	opacity:1;
+	border-radius: 50%;
+}
