@@ -3,6 +3,7 @@ import './Home.css'
 
 
 import Head from '../HomeComponents/Head'
+import Middle from '../HomeComponents/Middle'
 
 class Home extends Component {
 	
@@ -10,6 +11,7 @@ class Home extends Component {
 	    return (
 	    	<div>
 	    		<Head />
+	    		<Middle />
 	    	</div>
 	      
 	    );
