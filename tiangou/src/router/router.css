@@ -14,8 +14,8 @@
 	list-style: none;
 	border-top: 0.01rem solid #ccc;
 	z-index: 666;
-	background: #fff;
 
+	background: #fff;
 }
 
 .footer>li{
@@ -36,4 +36,26 @@
 	display: inline-block;
 	font-size: 0.28rem;
 	line-height: 26px;
+}
+
+.backTop{
+	color:#000;
+}
+.anticon{
+	color:#000;
+	background:#fff;
+	opacity: 1;
+}
+.ant-back-top{
+	right:0.2rem !important;
+	bottom: 0.75rem !important;
+}
+.ant-back-top-content{
+	background:#fff !important;
+}
+.ant-back-top{
+	background:#fff;
+	border:1px solid #ccc;
+	opacity:1;
+	border-radius: 50%;
 }
