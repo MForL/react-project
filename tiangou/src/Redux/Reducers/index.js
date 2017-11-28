@@ -1,5 +1,5 @@
 const listreducer = (state=[],action)=>{
-	
+	let {type,payload} =action;
 	switch(action.type){
 		case "ALL":
 			var newS = [...state];
@@ -7,7 +7,6 @@ const listreducer = (state=[],action)=>{
 			for(var i = 0; i< newArray.length;i++){
 				newS.push(newArray[i]);
 			}
-			
 			return newS;
 		default :
 			return state;

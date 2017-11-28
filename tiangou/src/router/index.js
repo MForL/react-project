@@ -22,12 +22,27 @@ const router = (
 	<Provider store={store}>
 		<Router>
 			<div>
-				<ul> 
-		          <li><NavLink activeClassName="active" to="/shop">Shop</NavLink></li>
-		          <li><NavLink activeClassName="active" to="/find">Find</NavLink></li>
-		          <li><NavLink activeClassName="active" to="/home">Home</NavLink></li>
-		          <li><NavLink activeClassName="active" to="/word">Word</NavLink></li>
-		          <li><NavLink activeClassName="active" to="/mine">Mine</NavLink></li>
+				<ul className="footer"> 
+		          <li><NavLink activeClassName="active" to="/shop">
+						<i className="iconfont">&#xe61a;</i>
+						<p>逛商场</p>
+		          </NavLink></li>
+		          <li><NavLink activeClassName="active" to="/find">
+						<i className="iconfont">&#xe502;</i>
+						<p>发现</p>
+		          </NavLink></li>
+		          <li><NavLink activeClassName="active" to="/home">
+						<i className="iconfont">&#xe608;</i>
+						<p>购物</p>
+		          </NavLink></li>
+		          <li><NavLink activeClassName="active" to="/word">
+						<i className="iconfont">&#xe616;</i>
+						<p>全球购</p>
+		          </NavLink></li>
+		          <li><NavLink activeClassName="active" to="/mine">
+						<i className="iconfont">&#xe621;</i>
+						<p>我的</p>
+		          </NavLink></li>
 		        </ul>
 				<Switch>
 				 	{
