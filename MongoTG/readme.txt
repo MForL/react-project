@@ -1,1 +1,0 @@
-SET DEBUG=mongotg:* & npm start
