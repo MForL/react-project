@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from "react-redux";
+import './Mine.css'
+import 'antd/dist/antd.css'
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import {NavLink} from 'react-router-dom'
+const FormItem = Form.Item;
 class Mine extends Component {
 	constructor(){
 		super();
@@ -27,14 +32,40 @@ class Mine extends Component {
   render() {
     return (
       <div className="Mine">
-        用户名：<input type="text" ref="username"/><br />
-        密码：<input type="text"ref="psw" /><br />
-        <button onClick={this.login}>登陆</button>
-        <button onClick={this.regist}>注册</button>
+		<div className="mine_first">
+			<i className="iconfont">&#xe614;</i>
+			<h3>我的天狗</h3>
+			<p>...</p>
+		</div>
+		<div className="login">
+			<dl>
+				<dt>用户名</dt>
+				<dd>
+					<input type="text" id="username" autoFocus v-model="username" />
+				</dd>
+			</dl>
+			<dl>
+				<dt>密码</dt>
+				<dd>
+					<input type="text" id="psw" v-model="psw" />
+				</dd>
+			</dl>
+			<div className="but_only">
+				<button type="submit" onClick={this.login} className="login_but">登录</button>	
+			</div>
+			
+			<NavLink to="">
+				<span className="regist_but">免费注册</span>
+			</NavLink>
+				
+		</div>
       </div>
     );
   }
 }
+
+
+
 
 export default connect(
 	(state)=>{
