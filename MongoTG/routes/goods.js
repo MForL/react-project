@@ -3,7 +3,7 @@ var router = express.Router();
 var GoodModel = require("../model/GoodModel");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/shop', function(req, res, next) {
     if (!req.session.username) {
         var logDefeat = "请您先登录！再查看购物车";
 
@@ -17,7 +17,6 @@ router.get('/', function(req, res, next) {
 	      res.send(docs);
 	    }
     })
-
 });
 // --------------增	
 router.post('/create', function(req, res, next) {
@@ -48,7 +47,7 @@ router.post('/save', function(req, res, next) {
             }
             if (err) {
                 result.code = -109;
-                result.message = "更新失败!";
+                result.message = "更改失败!";
             }
             res.send(JSON.stringify(result));
         })
@@ -90,4 +89,18 @@ router.post('/del', function(req, res, next) {
     });
 
 });
+
+router.get('/find', (req, res) => {
+  // 通过模型去查找数据库
+
+  GoodModel.find((err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+
 module.exports = router;

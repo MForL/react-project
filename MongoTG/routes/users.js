@@ -4,11 +4,11 @@ var UserModel = require("../model/UserModel");
 
 /* GET users listing. */
 
-// router.get('/logout', function(req, res, next) {
-// 	req.session.username = null;
-// 	res.render("login", {username: ""});
-// });
 
+router.get('/logout', function(req, res) {
+  req.session.username = null;
+  res.send("注销成功");
+});
 
 router.post('/regist', function(req, res, next) {
 	UserModel.find({username: req.body.username}, (err, docs)=>{
@@ -62,5 +62,16 @@ router.get('/find', (req, res) => {
     }
   });
 });
+
+
+router.get('/session', (req, res) => {
+
+  if (!req.session) {
+    res.send("err");
+  } else {
+    res.send(req.session.username);
+  }
+});
+
 
 module.exports = router;

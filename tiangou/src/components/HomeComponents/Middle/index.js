@@ -32,9 +32,6 @@ class Middle extends Component {
 			<div>
 				<div className="backTop">
 					<BackTop />
-					Scroll down to see the bottom-right
-					<strong> gray </strong>
-					button.
 				</div>
 				<div className="middle_first">
 					<div className="article">

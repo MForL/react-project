@@ -38,6 +38,15 @@
         "^/users": "/users"
       },
       "ws": true
+    },
+    "/goods": {
+      "target": "http://localhost:8080",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/goods": "/goods"
+      },
+      "ws": true
     }
+
   }
 }

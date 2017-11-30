@@ -1,0 +1,42 @@
+.Cart{
+	width: 100%;
+	height: auto;
+}
+
+.Cart .cart_first{
+	width: 100%;
+	height: 0.44rem;
+	background: #fff;
+}
+
+.Cart .cart_first i{
+	width: 0.44rem;
+	height: 0.44rem;
+	text-align: center;
+	line-height: 0.44rem;
+	font-size: 0.44rem;
+	color: #222;
+	float: left;
+}
+.Cart .cart_first h3{
+	width: 2.87rem;
+	height: 0.44rem;
+	font-size: 0.18rem;
+	text-align: center;
+	line-height: 0.44rem;
+	float: left;
+}
+.Cart .cart_first p{
+	width: 0.44rem;
+	height: 0.44rem;
+	line-height: 0.18rem;
+	text-align: center;
+	float: left;
+	font-size: 44px;
+}
+
+.Cart .cart_goodsdetail{
+	width: 100%;
+	height: 0.96rem;
+	padding: 0.10rem;
+}

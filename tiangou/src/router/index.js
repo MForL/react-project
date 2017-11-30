@@ -14,6 +14,7 @@ import Shop from "../components/Shop/Shop";
 import Find from "../components/Find/Find";
 import Word from "../components/Word/Word";
 import Mine from "../components/Mine/Mine";
+import Cart from "../components/Cart";
 
 
 
@@ -53,6 +54,7 @@ const router = (
 					<Route path="/find" component={Find}/>
 					<Route path="/word" component={Word}/>
 					<Route path="/mine" component={Mine}/>
+					<Route path="/cart" component={Cart}/>
 					
 					
 					<Redirect from="/" to="/home"/>

@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 import axios from 'axios';
 import 'antd/dist/antd.css'
 import {Carousel} from 'antd';
+import {NavLink} from 'react-router-dom';
+
 class Head extends Component {
 	constructor(){
 		super();
@@ -32,7 +34,9 @@ class Head extends Component {
 						</span>
 						<i className="iconfont searchIcone">&#xe63d;</i>
 						<input type="text" placeholder="好物搜索" />
-						<i className="iconfont shopIcone">&#xe505;</i>
+						<NavLink to='/cart'>
+							<i className="iconfont shopIcone">&#xe505;</i>
+						</NavLink>
 						<i className="iconfont messageIcone">&#xe637;</i>
 		        	</div>
 		        	<div className="lunbo">

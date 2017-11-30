@@ -12,9 +12,9 @@ const listreducer = (state=[],action)=>{
 	}
 }
 
-const lovereducer = (state=[],action)=>{
+const goodsreducer = (state=[],action)=>{
 	switch(action.type){
-		case "lovelist":
+		case "shopcart":
 			var newS = [...state];
 			var newArray = action.payload;
 			for(var i = 0; i< newArray.length;i++){
@@ -29,7 +29,7 @@ const lovereducer = (state=[],action)=>{
 
 
 
-export {listreducer, lovereducer};
+export {listreducer, goodsreducer};
 
 // reducer 的设计必须是一个纯函数
 // 
