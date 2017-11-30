@@ -36,7 +36,7 @@ class Mine extends Component {
 			<NavLink to='/home'>
 				<i className="iconfont">&#xe614;</i>
 			</NavLink>
-			<h3>我的天狗</h3>
+			<h3>免费注册</h3>
 			<p>...</p>
 		</div>
 		<div className="login">
@@ -53,12 +53,8 @@ class Mine extends Component {
 				</dd>
 			</dl>
 			<div className="but_only">
-				<button type="submit" onClick={this.login} className="login_but">登录</button>	
+				<button type="submit" onClick={this.login} className="login_but">注册</button>	
 			</div>
-			
-			<NavLink to="/regist">
-				<span className="regist_but">免费注册</span>
-			</NavLink>
 				
 		</div>
       </div>

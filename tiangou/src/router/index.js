@@ -15,6 +15,7 @@ import Find from "../components/Find/Find";
 import Word from "../components/Word/Word";
 import Mine from "../components/Mine/Mine";
 import Cart from "../components/Cart";
+import Regist from "../components/Mine/Mine_regist.js";
 
 
 
@@ -55,6 +56,7 @@ const router = (
 					<Route path="/word" component={Word}/>
 					<Route path="/mine" component={Mine}/>
 					<Route path="/cart" component={Cart}/>
+					<Route path="/regist" component={Regist}/>
 					
 					
 					<Redirect from="/" to="/home"/>
