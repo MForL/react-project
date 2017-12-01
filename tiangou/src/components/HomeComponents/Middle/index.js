@@ -119,7 +119,7 @@ class Middle extends Component {
 					}
 				</div>
 				
-				<div className="bot"></div>
+				
 			</div>
 		  
 		);

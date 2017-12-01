@@ -4,6 +4,7 @@ import './Home.css'
 
 import Head from '../HomeComponents/Head'
 import Middle from '../HomeComponents/Middle'
+import Detail from '../HomeComponents/Detail'
 
 class Home extends Component {
 	
@@ -12,6 +13,7 @@ class Home extends Component {
 	    	<div>
 	    		<Head />
 	    		<Middle />
+	    		<Detail />
 	    	</div>
 	      
 	    );

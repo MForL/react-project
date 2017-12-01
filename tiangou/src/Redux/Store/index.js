@@ -3,12 +3,13 @@ import thunk from 'redux-thunk'; //处理异步action
 import reduxpromsie from "redux-promise";
 import {applyMiddleware} from "redux";
 
-import {listreducer, goodsreducer} from "../Reducers";
+import {listreducer, goodsreducer, detailreducer} from "../Reducers";
 
 
 const store = createStore(combineReducers({
 	list:listreducer,
-	goods:goodsreducer
+	goods:goodsreducer,
+	details:detailreducer
 }),applyMiddleware(thunk,reduxpromsie));
 
 
