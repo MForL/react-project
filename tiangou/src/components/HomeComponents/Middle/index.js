@@ -16,18 +16,19 @@ class Middle extends Component {
 
 	}
 	render() {
-		var lunShun = this.props.dataList.length ? this.props.dataList[8].data.items:[];
-		var qianggou = this.props.dataList.length ? this.props.dataList[9].data:[];
-		var qianggouList = this.props.dataList.length ? this.props.dataList[9].data.items:[];
-		var fourBox= this.props.dataList.length ? this.props.dataList[10].data.items:[];
-		var Middle_one= this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl:[];
-		var Middle_two= this.props.dataList.length ? this.props.dataList[12].data.items[0].imageUrl:[];
-		var Middle_three= this.props.dataList.length ? this.props.dataList[13].data.items[0].imageUrl:[];
-		var same_one= this.props.dataList.length ? this.props.dataList[11].data.items:[];
-		var same_two= this.props.dataList.length ? this.props.dataList[12].data.items:[];
-		var same_three= this.props.dataList.length ? this.props.dataList[13].data.items:[];
+		console.log(this.props.dataList)
+		var lunShun = this.props.dataList.length ? this.props.dataList[7].data.items:[];
+		var qianggou = this.props.dataList.length ? this.props.dataList[8].data:[];
+		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items:[];
+		var fourBox= this.props.dataList.length ? this.props.dataList[9].data.items:[];
+		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.imageUrl:[];
+		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.imageUrl:[];
+		// var Middle_three= this.props.dataList.length ? this.props.dataList[13].data.data[0].imageUrl:[];
+		var same_one= this.props.dataList.length ? this.props.dataList[10].data.items:[];
+		var same_two= this.props.dataList.length ? this.props.dataList[11].data.items:[];
+		// var same_three= this.props.dataList.length ? this.props.dataList[13].data.data:[];
 		
-		console.log(same_one)
+		// console.log(same_three)
 		return (
 			<div>
 				<div className="backTop">
@@ -116,18 +117,7 @@ class Middle extends Component {
 						})
 					}
 				</div>
-				<img src={Middle_three} alt="" className="middle_img"/>
-				<div className="normal">
-					{
-						same_three.map((item, index)=>{
-							return (
-								<div key={item.id} data-type={index}>
-									<img src={item.imageUrl} alt=""/>
-								</div>
-							)
-						})
-					}
-				</div>
+				
 				<div className="bot"></div>
 			</div>
 		  
