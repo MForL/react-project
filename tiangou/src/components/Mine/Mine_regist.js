@@ -6,30 +6,25 @@ import 'antd/dist/antd.css'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import {NavLink} from 'react-router-dom'
 const FormItem = Form.Item;
-class Mine extends Component {
+class MineReg extends Component {
 	constructor(){
 		super();
-		this.login = this.login.bind(this);
-		this.regist = this.regist.bind(this);
+		
+		
 	}
-	login(){
-		axios.post('/users/login',{
-			username:this.refs.username.value,
-			psw:this.refs.psw.value
-		}).then((res)=>{
-			console.log(res);
-		})
-	}
-	regist(){
-		// http://localhost:8080/users/regist
-		axios.post('/users/regist',{
-			username:this.refs.username.value,
-			psw:this.refs.psw.value
-		}).then((res)=>{
-			console.log(res);
-		})
-	}
+	handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+			axios.post('/users/regist',values).then((res)=>{
+				console.log(res);
+			})
+      }
+    });
+  }
   render() {
+  	const { getFieldDecorator } = this.props.form;
     return (
       <div className="Mine">
 		<div className="mine_first">
@@ -39,29 +34,33 @@ class Mine extends Component {
 			<h3>免费注册</h3>
 			<p>...</p>
 		</div>
-		<div className="login">
-			<dl>
-				<dt>用户名</dt>
-				<dd>
-					<input type="text" id="username" autoFocus v-model="username" />
-				</dd>
-			</dl>
-			<dl>
-				<dt>密码</dt>
-				<dd>
-					<input type="text" id="psw" v-model="psw" />
-				</dd>
-			</dl>
-			<div className="but_only">
-				<button type="submit" onClick={this.login} className="login_but">注册</button>	
-			</div>
-				
-		</div>
+		<Form onSubmit={this.handleSubmit} className="login-form">
+        <FormItem>
+          {getFieldDecorator('username', {
+            rules: [{ required: true, message: 'Please input your username!' }],
+          })(
+            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
+          )}
+        </FormItem>
+        <FormItem>
+          {getFieldDecorator('psw', {
+            rules: [{ required: true, message: 'Please input your Password!' }],
+          })(
+            <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
+          )}
+        </FormItem>
+        <FormItem>
+          <Button type="primary" htmlType="submit" className="login-form-button">
+            Regist
+          </Button>
+          
+        </FormItem>
+      </Form>
       </div>
     );
   }
 }
-
+const RegistForm = Form.create()(MineReg);
 
 
 
@@ -73,5 +72,5 @@ export default connect(
 		}
 	},
 	null
-)(Mine);
+)(RegistForm);
 

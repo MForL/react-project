@@ -21,8 +21,9 @@ class Middle extends Component {
 		var qianggou = this.props.dataList.length ? this.props.dataList[8].data:[];
 		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items:[];
 		var fourBox= this.props.dataList.length ? this.props.dataList[9].data.items:[];
-		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.imageUrl:[];
-		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.imageUrl:[];
+		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.items[0].imageUrl:[];
+		// var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.imageUrl:[];
+		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl:[];
 		// var Middle_three= this.props.dataList.length ? this.props.dataList[13].data.data[0].imageUrl:[];
 		var same_one= this.props.dataList.length ? this.props.dataList[10].data.items:[];
 		var same_two= this.props.dataList.length ? this.props.dataList[11].data.items:[];
