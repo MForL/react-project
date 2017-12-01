@@ -19,11 +19,11 @@ class Head extends Component {
 		}	
 	}
   	render() {
-  		var lunArray = this.props.dataList.length ? this.props.dataList[5].data.items:[];
+  		var lunArray = this.props.dataList.length ? this.props.dataList[4].data.items:[];
 		// console.log(lunArray);
-		var listF = this.props.dataList.length ? this.props.dataList[6].data.items:[];
+		var listF = this.props.dataList.length ? this.props.dataList[5].data.items:[];
 		// console.log(listF);
-		var adverImg = this.props.dataList.length ? this.props.dataList[7].data.items[0]:[];
+		var adverImg = this.props.dataList.length ? this.props.dataList[6].data.items[0]:[];
 	    return (
 	    	<div>
 	    		<div className="Head">
