@@ -26,34 +26,36 @@ class Cart extends Component {
 		// document.querySelector('.footer').style.display = 'block';
 	}
 	down(e){
-		// console.log("ok");
-		console.log(e.target.nextSibling.value);
-		var val = e.target.nextSibling.value;
-		if (val==1) {
-			document.querySelector('.low_but').disabled=true;
-		}else{
-			document.querySelector('.low_but').disabled=false;
-			var newVal = parseInt(val) - 1;
-			// var count = this.refs.realPrice.innerHTML;
-			// var newCount = count.substring(1);
-			this.setState({
-				num:newVal
-				// allPrice:newCount * newVal
-			})
-		}
+		console.log(e);
+		// // console.log("ok");
+		// console.log(e.target.nextSibling.value);
+		// var val = e.target.nextSibling.value;
+		// if (val==1) {
+		// 	document.querySelector('.low_but').disabled=true;
+		// }else{
+		// 	document.querySelector('.low_but').disabled=false;
+		// 	var newVal = parseInt(val) - 1;
+		// 	// var count = this.refs.realPrice.innerHTML;
+		// 	// var newCount = count.substring(1);
+		// 	this.setState({
+		// 		num:newVal
+		// 		// allPrice:newCount * newVal
+		// 	})
+		// }
 		
 	}
 	up(e){
+		console.log(e);
 		// console.log("ok");
-		var val = e.target.previousSibling.value;
-		var newVal = parseInt(val) + 1;
-		// var count = this.refs.realPrice.innerHTML;
-		// var newCount = count.substring(1);
-		// console.log(newVal);
-		this.setState({
-			num:newVal
-			// allPrice:newCount * newVal
-		})
+		// var val = e.target.previousSibling.value;
+		// var newVal = parseInt(val) + 1;
+		// // var count = this.refs.realPrice.innerHTML;
+		// // var newCount = count.substring(1);
+		// // console.log(newVal);
+		// this.setState({
+		// 	num:newVal
+		// 	// allPrice:newCount * newVal
+		// })
 	}
 	render () {
 		const ButtonGroup = Button.Group;
@@ -85,9 +87,9 @@ class Cart extends Component {
 													</div>
 													<div className="price_num">
 														<ButtonGroup>
-													      <Button className="low_but" onClick={this.down}>-</Button>
+													      <Button className="low_but" onClick={()=>this.down(index)}>-</Button>
 													      <input type="number" value={this.state.num} readOnly className="middle_num"/>
-													      <Button className="high_but" onClick={this.up}>+</Button>
+													      <Button className="high_but" onClick={()=>this.up(index)}>+</Button>
 													    </ButtonGroup>
 													</div>
 												</div>
