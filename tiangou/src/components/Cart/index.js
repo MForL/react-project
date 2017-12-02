@@ -27,12 +27,13 @@ class Cart extends Component {
 	}
 	down(e){
 		// console.log("ok");
-
-		if (2==1) {
+		console.log(e.target.nextSibling.value);
+		var val = e.target.nextSibling.value;
+		if (val==1) {
 			document.querySelector('.low_but').disabled=true;
 		}else{
 			document.querySelector('.low_but').disabled=false;
-			var newVal = 10 - 1;
+			var newVal = parseInt(val) - 1;
 			// var count = this.refs.realPrice.innerHTML;
 			// var newCount = count.substring(1);
 			this.setState({
@@ -44,8 +45,8 @@ class Cart extends Component {
 	}
 	up(e){
 		// console.log("ok");
-		console.log(e.target);
-		var newVal = 10 + 1;
+		var val = e.target.previousSibling.value;
+		var newVal = parseInt(val) + 1;
 		// var count = this.refs.realPrice.innerHTML;
 		// var newCount = count.substring(1);
 		// console.log(newVal);
