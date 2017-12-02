@@ -4,13 +4,14 @@ var GoodModel = require("../model/GoodModel");
 
 /* GET home page. */
 router.get('/shop', function(req, res, next) {
-    if (!req.session.username) {
-        var logDefeat = "请您先登录！再查看购物车";
+    // if (!req.session.username) {
+    //     var logDefeat = "请您先登录！再查看购物车";
 
-    	res.send(JSON.stringify(logDefeat));
-        return;
-    };
-    GoodModel.find({ flag: 1, username: req.session.username }, (err, docs) => {
+    // 	res.send(JSON.stringify(logDefeat));
+    //     return;
+    // };
+    // GoodModel.find({ flag: 1, username: req.session.username }, (err, docs) => {
+    GoodModel.find({ flag: 1}, (err, docs) => {
         if (err || docs.length == 0) {
 	      res.send(err);
 	    } else {
@@ -25,7 +26,7 @@ router.post('/create', function(req, res, next) {
     goodN.imgUrl = req.body.imgUrl;
     goodN.goodname = req.body.goodname;
     goodN.price = req.body.price;
-    goodN.count = req.body.count;
+    goodN.originalPrice = req.body.originalPrice;
 
     goodN.save((err) => {
         if (err) {

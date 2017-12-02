@@ -12,7 +12,8 @@ class Cart extends Component {
 		this.up = this.up.bind(this);
 		this.down = this.down.bind(this);
 		this.state={
-			num:1
+			num:1,
+			allPrice:0
 		}
 	}	
 	componentWillMount() {
@@ -24,30 +25,38 @@ class Cart extends Component {
 	componentWillUnmount() {
 		// document.querySelector('.footer').style.display = 'block';
 	}
-	down(val){
+	down(e){
 		// console.log("ok");
-		if (val==1) {
+
+		if (2==1) {
 			document.querySelector('.low_but').disabled=true;
 		}else{
 			document.querySelector('.low_but').disabled=false;
-			var newVal = val-1;
-			// console.log(newVal);
+			var newVal = 10 - 1;
+			// var count = this.refs.realPrice.innerHTML;
+			// var newCount = count.substring(1);
 			this.setState({
 				num:newVal
+				// allPrice:newCount * newVal
 			})
 		}
 		
 	}
-	up(val){
+	up(e){
 		// console.log("ok");
-		var newVal = parseFloat(val) + 1;
+		console.log(e.target);
+		var newVal = 10 + 1;
+		// var count = this.refs.realPrice.innerHTML;
+		// var newCount = count.substring(1);
 		// console.log(newVal);
 		this.setState({
 			num:newVal
+			// allPrice:newCount * newVal
 		})
 	}
 	render () {
 		const ButtonGroup = Button.Group;
+		console.log(this.props.goods)
 		return (
 			<div className="Cart">
 				<div className="cart_first">
@@ -56,43 +65,49 @@ class Cart extends Component {
 					<p>...</p>
 				</div>
 				<div className="cart_goods">
-					<div className="cart_goodsdetail">
-						<div className="cart_input">
-		                	<input type="checkbox" />
-		              	</div>
-						<div className="cart_content">
-							<img src="" alt=""/>
-							<div className="cart_content_cnt">
-								<div className="pcont">
-						
-								</div>
-								<div className="price">
-									<div className="price_under">
-										<span className="price_under_normal">￥255</span>
-										<span className="price_under_line">￥888</span>
+					{
+						this.props.goods.map((item, index)=>{
+							return (
+								<div key={item._id}>
+									<div className="cart_goodsdetail">
+										<div className="cart_input">
+						                	<input type="checkbox" />
+						              	</div>
+										<div className="cart_content">
+											<img src={item.imgUrl} alt=""/>
+											<div className="cart_content_cnt">
+												<div className="pcont">{item.goodname}</div>
+												<div className="price">
+													<div className="price_under">
+														<span className="price_under_normal">{item.price}</span>
+														<span className="price_under_line">{item.originalPrice}</span>
+													</div>
+													<div className="price_num">
+														<ButtonGroup>
+													      <Button className="low_but" onClick={this.down}>-</Button>
+													      <input type="number" value={this.state.num} readOnly className="middle_num"/>
+													      <Button className="high_but" onClick={this.up}>+</Button>
+													    </ButtonGroup>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div className="price_num">
-										<ButtonGroup>
-									      <Button className="low_but" onClick={()=>this.down(this.refs.numC.value)}>-</Button>
-									      <input type="number" value={this.state.num} ref="numC" id="numC" readOnly className="middle_num"/>
-									      <Button className="high_but" onClick={()=>this.up(this.refs.numC.value)}>+</Button>
-									    </ButtonGroup>
+									<div className="cart_all">
+										<div className="price_all">
+											合计：<span>{this.state.allPrice}</span>(不含运费)
+										</div>
+										<div className="price_sub">
+											<div className="price_nei">
+												结算<span>({this.state.num})</span>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div className="cart_all">
-						<div className="price_all">
-							合计：<span>￥197.00</span>(不含运费)
-						</div>
-						<div className="price_sub">
-							<div className="price_nei">
-								结算<span>({this.state.num})</span>
-							</div>
-							
-						</div>
-					</div>
+							)
+						})
+					}
+					
 				</div>
 				
 			</div>
@@ -116,7 +131,7 @@ export default connect(
 				console.log(res);
 				    	return {
 				    		type:"shopcart",
-				    		payload:res
+				    		payload:res.data
 				    	}
 				})
 		}

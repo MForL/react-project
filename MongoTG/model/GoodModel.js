@@ -6,7 +6,7 @@ var GoodSchema = new Schema({
     goodname : String,
     imgUrl   : String,
     price    : String,
-    count    : String,
+    originalPrice    : String,
     flag     : { type: Number, default: 1 },
     date     : { type: Date, default: Date.now }
 });

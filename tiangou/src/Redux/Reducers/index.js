@@ -38,11 +38,24 @@ const detailreducer = (state=[],action)=>{
 			return state;
 	}
 }
+const detailsotherreducer = (state=[],action)=>{
+	switch(action.type){
+		case "detailsGetOther":
+			var newS = [...state];
+			var newArray = action.payload;
+			for(var i = 0; i< newArray.length;i++){
+				newS.push(newArray[i]);
+			}
+			return newS;
+		default :
+			return state;
+	}
+}
 
 
 
 
-export {listreducer, goodsreducer, detailreducer};
+export {listreducer, goodsreducer, detailreducer, detailsotherreducer};
 
 // reducer 的设计必须是一个纯函数
 // 

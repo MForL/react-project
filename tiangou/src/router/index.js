@@ -16,6 +16,7 @@ import Word from "../components/Word/Word";
 import Mine from "../components/Mine/Mine";
 import Cart from "../components/Cart";
 import Regist from "../components/Mine/Mine_regist.js";
+import DetailGood from "../components/HomeComponents/DetailGood";
 
 
 
@@ -57,6 +58,7 @@ const router = (
 					<Route path="/mine" component={Mine}/>
 					<Route path="/cart" component={Cart}/>
 					<Route path="/regist" component={Regist}/>
+					<Route path="/detailGood/:goods_id" component={DetailGood}/>
 					
 					
 					<Redirect from="/" to="/home"/>

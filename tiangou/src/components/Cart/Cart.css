@@ -67,14 +67,12 @@
 	width: 3.25rem;
 	height: 0.75rem;
 	margin-left: 0.10rem;
-	background: red;
 	float: right;
 }
 
 .Cart .cart_goodsdetail .cart_content img{
 	width: 0.75rem;
 	height: 0.75rem;
-	background: green;
 	float: left;
 	display: block;
 }
@@ -84,7 +82,6 @@
 	height: 0.7425rem;
 	margin-left: 0.10rem;
 	float: left;
-	background: hotpink;
 
 }
 
@@ -92,18 +89,18 @@
 	width: 2.40rem;
 	height: 0.3428rem;
 	font-size: 0.12rem;
+	color: #000;
+	font-weight: bold;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    background: black;
 }
 
 
 .Cart .cart_goodsdetail .cart_content .cart_content_cnt .price{
 	width: 2.4rem;
 	height: 0.35rem;
-	background: deepskyblue;
 	margin-top: 0.06rem;
 }
 
@@ -166,7 +163,6 @@
 .Cart .cart_all .price_all{
 	width: 1.55rem;
 	height: 0.24rem;
-	background: green;
 	margin-top: 10px;
 	line-height: 0.24rem;
 	font-size: 0.12rem;
@@ -175,7 +171,7 @@
 }
 .Cart .cart_all .price_all span{
 	color: #ff4c48;
-	font-size: 0.14rem;
+	font-size: 0.16rem;
 }
 
 .Cart .cart_all .price_sub{

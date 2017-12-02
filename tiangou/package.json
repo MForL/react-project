@@ -46,6 +46,14 @@
         "^/goods": "/goods"
       },
       "ws": true
+    },
+    "/product": {
+      "target": "https://midway.51tiangou.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/product": "/product"
+      },
+      "ws": true
     }
 
   }
