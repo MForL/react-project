@@ -1,43 +1,46 @@
-import React, { Component } from 'react';
+import React, {
+	Component
+} from 'react';
 import './DetailGood.css'
 import axios from 'axios';
-import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import {
+	NavLink
+} from 'react-router-dom';
 class DetailGood extends Component {
-	constructor(){
+	constructor() {
 		super();
-		this.state= {
-			list:[]
+		this.state = {
+			list: []
 		}
-		this.addCart =this.addCart.bind(this);
+		this.addCart = this.addCart.bind(this);
 	}
 	componentWillMount() {
-		var that =this;
-		axios.get(`/product/listing/init.node?id=${this.props.match.params.goods_id}`).then(res=>{
-				    	console.log(res);
-				    	that.setState({
-				    		list:res.data.data
-				    	})
-				})
+		var that = this;
+		axios.get(`/product/listing/init.node?id=${this.props.match.params.goods_id}`).then(res => {
+			console.log(res);
+			that.setState({
+				list: res.data.data
+			})
+		})
 	}
-	addCart(){
-		var goods_meg={
-			goodname:this.refs.title.innerHTML,
-			imgUrl:this.refs.img.src,
-			price:this.refs.price.innerHTML,
-			originalPrice:this.refs.originalPrice.innerHTML
+	addCart() {
+		var goods_meg = {
+			goodname: this.refs.title.innerHTML,
+			imgUrl: this.refs.img.src,
+			price: this.refs.price.innerHTML,
+			originalPrice: this.refs.originalPrice.innerHTML
 		}
-		axios.post('/goods/create',goods_meg).then((res)=>{
+		axios.post('/goods/create', goods_meg).then((res) => {
 			console.log(res);
 		})
 	}
-  	render() {
-  		var imgUrl = this.state.list.length ? this.state.list[0].data : [];
-  		var cont = this.state.list.length ? this.state.list[2].data : []
-  		console.log(cont);
-	    return (
+	render() {
+		var imgUrl = this.state.list.length ? this.state.list[0].data : [];
+		var cont = this.state.list.length ? this.state.list[2].data : []
+		console.log(cont);
+		return (
 
-	    	<div>
+			<div>
 		    	<div className="detail_top">
 		    		<NavLink to="/home">
 						<i className="iconfont">&#xe614;</i>
@@ -75,9 +78,9 @@ class DetailGood extends Component {
 		    		<span className="btn_buy">立即购买</span>
 		    	</div>
 	    	</div>
-	      
-	    );
-  	}
+
+		);
+	}
 }
 
 export default DetailGood;

@@ -1,21 +1,26 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import { Button } from 'antd';
+import React, {
+	Component
+} from 'react';
+import {
+	Button
+} from 'antd';
 
 import './Cart.css'
 // import { Radio } from 'antd';
-import {connect} from 'react-redux';
+import {
+	connect
+} from 'react-redux';
 import axios from 'axios';
-class Cart extends Component {		
-	constructor(){
+class Cart extends Component {
+	constructor() {
 		super();
 		this.up = this.up.bind(this);
 		this.down = this.down.bind(this);
-		this.state={
-			num:1,
-			allPrice:0
+		this.state = {
+			num: 1,
+			allPrice: 0
 		}
-	}	
+	}
 	componentWillMount() {
 		// document.querySelector('.footer').style.display = 'none';		
 	}
@@ -25,7 +30,7 @@ class Cart extends Component {
 	componentWillUnmount() {
 		// document.querySelector('.footer').style.display = 'block';
 	}
-	down(e){
+	down(e) {
 		console.log(e);
 		// // console.log("ok");
 		// console.log(e.target.nextSibling.value);
@@ -42,9 +47,9 @@ class Cart extends Component {
 		// 		// allPrice:newCount * newVal
 		// 	})
 		// }
-		
+
 	}
-	up(e){
+	up(e) {
 		console.log(e);
 		// console.log("ok");
 		// var val = e.target.previousSibling.value;
@@ -57,7 +62,7 @@ class Cart extends Component {
 		// 	// allPrice:newCount * newVal
 		// })
 	}
-	render () {
+	render() {
 		const ButtonGroup = Button.Group;
 		console.log(this.props.goods)
 		return (
@@ -120,23 +125,22 @@ class Cart extends Component {
 
 
 export default connect(
-	(state)=>{
+	(state) => {
 		return {
-			goods:state.goods
+			goods: state.goods
 		}
 
-	},
-	{
-		getShopcart:()=>{
+	}, {
+		getShopcart: () => {
 			//异步action 借助 redux-promise 中间件实现 
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1511766446555
-			return axios.get("/goods/shop").then(res=>{
+			return axios.get("/goods/shop").then(res => {
 				console.log(res);
-				    	return {
-				    		type:"shopcart",
-				    		payload:res.data
-				    	}
-				})
+				return {
+					type: "shopcart",
+					payload: res.data
+				}
+			})
 		}
 	}
 )(Cart);

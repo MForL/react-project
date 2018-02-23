@@ -1,26 +1,32 @@
-import React,{Component} from 'react';
-import {connect} from 'react-redux';
+import React, {
+	Component
+} from 'react';
+import {
+	connect
+} from 'react-redux';
 import axios from 'axios';
 import './Detail.css'
-import {NavLink} from 'react-router-dom'
+import {
+	NavLink
+} from 'react-router-dom'
 class Detail extends Component {
-	constructor(){
+	constructor() {
 		super();
-		this.state={
-			detail_cont:[]
+		this.state = {
+			detail_cont: []
 		}
 	}
 	componentDidMount() {
-		if (this.props.details.length == 0) {
+		if (this.props.details.length === 0) {
 			this.props.getDetail();
 			this.props.getDetailTwo();
 			this.props.getDetailThree();
 			this.props.getDetailfour();
-			
+
 		}
-		
+
 	}
-	render () {
+	render() {
 		return (
 			<div className="Detail">
 				<div className="detail_cont">
@@ -58,66 +64,65 @@ class Detail extends Component {
 }
 
 export default connect(
-	(state)=>{
+	(state) => {
 		// console.log(state.details)
-		return{
-			details:state.details
+		return {
+			details: state.details
 		}
-	},
-	{
-		getDetail:()=>{
+	}, {
+		getDetail: () => {
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633
-			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1").then(res=>{
+			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1").then(res => {
 				var data = res.data.data;
 				// console.log(data);
-				data.splice(0,1);
-				data.splice(5,1);
+				data.splice(0, 1);
+				data.splice(5, 1);
 				// console.log(res.data.data.splice(0,1));
-				    	return {
-				    		type:"detailsGet",
-				    		payload:data
-				    	}
-				})
+				return {
+					type: "detailsGet",
+					payload: data
+				}
+			})
 		},
-		getDetailTwo:()=>{
+		getDetailTwo: () => {
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170610&tabIndex=0&childIndex=0&currentView=4&source=1&startId=9127761
-			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633").then(res=>{
+			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633").then(res => {
 				var data = res.data.data;
-				data.splice(5,1);
-				    	return {
-				    		type:"detailsGet",
-				    		payload:data
-				    	}
-				})
+				data.splice(5, 1);
+				return {
+					type: "detailsGet",
+					payload: data
+				}
+			})
 		},
-		getDetailThree:()=>{
+		getDetailThree: () => {
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170610&tabIndex=0&childIndex=0&currentView=4&source=1&startId=9127761
-			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170610&tabIndex=0&childIndex=0&currentView=4&source=1&startId=9127761").then(res=>{
+			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170610&tabIndex=0&childIndex=0&currentView=4&source=1&startId=9127761").then(res => {
 				var data = res.data.data;
-				data.splice(5,1);
-				    	return {
-				    		type:"detailsGet",
-				    		payload:data
-				    	}
-				})
+				data.splice(5, 1);
+				return {
+					type: "detailsGet",
+					payload: data
+				}
+			})
 		},
-		getDetailfour:()=>{
+		getDetailfour: () => {
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512126080600&tabIndex=0&childIndex=0&currentView=2&source=1
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170609&tabIndex=0&childIndex=0&currentView=3&source=1&startId=10215633
 			// https://midway.51tiangou.com/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170610&tabIndex=0&childIndex=0&currentView=4&source=1&startId=9127761
-			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170612&tabIndex=0&childIndex=0&currentView=6&source=1&startId=10620557").then(res=>{
+			return axios.get("/shopping/index/init.node?storeId=179&cityId=2554&_=1512183170612&tabIndex=0&childIndex=0&currentView=6&source=1&startId=10620557").then(res => {
 				var data = res.data.data;
-				data.splice(5,1);
-				    	return {
-				    		type:"detailsGet",
-				    		payload:data
-				    	}
-				})
+				data.splice(5, 1);
+				return {
+					type: "detailsGet",
+					payload: data
+				}
+			})
 		}
 	}
 )(Detail);

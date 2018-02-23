@@ -1,30 +1,38 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import axios from 'axios';
-import {connect} from "react-redux";
+import {
+  connect
+} from "react-redux";
 import './Mine.css'
 import 'antd/dist/antd.css'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import {NavLink} from 'react-router-dom'
+import {
+  Form,
+  Icon,
+  Input,
+  Button
+} from 'antd';
+import {
+  NavLink
+} from 'react-router-dom'
 const FormItem = Form.Item;
 class Mine extends Component {
-	constructor(){
-		super();
-		
-		
-	}
-	handleSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-			axios.post('/users/login',values).then((res)=>{
-				console.log(res);
-			})
+        axios.post('/users/login', values).then((res) => {
+          console.log(res);
+        })
       }
     });
   }
   render() {
-  	const { getFieldDecorator } = this.props.form;
+    const {
+      getFieldDecorator
+    } = this.props.form;
     return (
       <div className="Mine">
 		<div className="mine_first">
@@ -65,13 +73,11 @@ const LoginForm = Form.create()(Mine);
 
 
 export default connect(
-	(state)=>{
-		console.log(state);
-		return {
-			list :state.list
-		}
-	},
-	null
+  (state) => {
+    console.log(state);
+    return {
+      list: state.list
+    }
+  },
+  null
 )(LoginForm);
-
-

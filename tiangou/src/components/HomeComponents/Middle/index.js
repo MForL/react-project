@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React, {
+	Component
+} from 'react';
 import './Middle.css'
-import {connect} from "react-redux";
-import axios from 'axios';
+import {
+	connect
+} from "react-redux";
 import 'antd/dist/antd.css'
-import {Carousel} from 'antd';
-import { BackTop } from 'antd';
+import {
+	Carousel
+} from 'antd';
+import {
+	BackTop
+} from 'antd';
 class Middle extends Component {
-	constructor(){
+	constructor() {
 		super();
-		this.state={
-			dataList:[]
+		this.state = {
+			dataList: []
 		}
 	}
 	componentDidMount() {
@@ -17,18 +24,18 @@ class Middle extends Component {
 	}
 	render() {
 		console.log(this.props.dataList)
-		var lunShun = this.props.dataList.length ? this.props.dataList[7].data.items:[];
-		var qianggou = this.props.dataList.length ? this.props.dataList[8].data:[];
-		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items:[];
-		var fourBox= this.props.dataList.length ? this.props.dataList[9].data.items:[];
-		var Middle_one= this.props.dataList.length ? this.props.dataList[10].data.items[0].imageUrl:[];
+		var lunShun = this.props.dataList.length ? this.props.dataList[7].data.items : [];
+		var qianggou = this.props.dataList.length ? this.props.dataList[8].data : [];
+		var qianggouList = this.props.dataList.length ? this.props.dataList[8].data.items : [];
+		var fourBox = this.props.dataList.length ? this.props.dataList[9].data.items : [];
+		var Middle_one = this.props.dataList.length ? this.props.dataList[10].data.items[0].imageUrl : [];
 		// var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.imageUrl:[];
-		var Middle_two= this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl:[];
+		var Middle_two = this.props.dataList.length ? this.props.dataList[11].data.items[0].imageUrl : [];
 		// var Middle_three= this.props.dataList.length ? this.props.dataList[13].data.data[0].imageUrl:[];
-		var same_one= this.props.dataList.length ? this.props.dataList[10].data.items:[];
-		var same_two= this.props.dataList.length ? this.props.dataList[11].data.items:[];
+		var same_one = this.props.dataList.length ? this.props.dataList[10].data.items : [];
+		var same_two = this.props.dataList.length ? this.props.dataList[11].data.items : [];
 		// var same_three= this.props.dataList.length ? this.props.dataList[13].data.data:[];
-		
+
 		// console.log(same_three)
 		return (
 			<div>
@@ -121,21 +128,19 @@ class Middle extends Component {
 				
 				
 			</div>
-		  
+
 		);
 	}
 	// 
-			// 									
-	
+	// 									
+
 }
 
 export default connect(
-	(state)=>{
-			return {
-				dataList:state.list
-			}
+	(state) => {
+		return {
+			dataList: state.list
+		}
 	},
 	null
 )(Middle);
-
-
